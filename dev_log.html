@@ -35,6 +35,10 @@
             <p>
                 I was doing some more testing with the login and register pages and neither is properly displaying their errors. When logging in it's supposed to warn you if you have the incorrect password or the email isn't a valid email, but right now its not. It just redirects you straight to the register page. The register page does something similar. If the user tries to register with an email already in the database it just goes straight to the login page, but it doesn't tell them why.
             </p>
+            <br>
+            <p>
+                I've got the error messages fixed. Now I'm just stuck trying to figure out the best way to save recipes. Its going to require I look at and refactor the JavaScript I use to create the new_recipe page forms. I think I need to look for points where I can save data at a global level that will be easily passed to the server. Right now I'm thinking I just need to create a form that is hidden except for the save button. Pressing the save button will pass all the hidden recipe data to the server. I just need to think of the best way to populate the form without having to code to completely unique forms with JavaScript for the AI generated recipe and the user input recipe.
+            </p>
         </section>
         <hr>
         <section class="devPost">
