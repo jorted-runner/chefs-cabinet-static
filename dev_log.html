@@ -27,9 +27,20 @@
     </header>
     <main>
         <section class="devPost">
+            <h1>March 27, 2024</h1>
+            <p>
+                I've got it working to save the recipe now. I just created a hidden form and pass those values to the server when the save recipe button is pressed. Its being created when the user clicks the generate image button, because if that is triggered the page has all the required data to be able to be saved.
+            </p>
+            <br>
+            <p>
+                I also decided to just save the images to local for now. I need to research more about storing the images in an S3 bucket. I want to be sure that the security and permissions associated with the bucket don't cause issues but also don't give the user more access than they're supposed to have. I may end up just storing them locally in the EC2 after we migrate, but I need to figure out the cost of the data expanding that way. With the images I also need to create a few classes that will allow the image to be optimized for the web. I need it to be way smaller and the quality dropped a bit to keep the page load size down.
+            </p>
+        </section>
+        <hr>
+        <section class="devPost">
             <h1>March 25, 2024</h1>
             <p>
-                I've jus been working the website. I have the register, login, and logout all working. I have the database set up with some possible modifications that will be done in the future. I decided to just build custom forms rather than use the wtforms. I just decided it would be easier to get the style and functionality I want. The next thing I'm going to be working on is saving recipes. I may need to create a hidden form that stores the data and I can just pass them to the server, but I still need to think about the best way to do it.
+                I've just been working the website. I have the register, login, and logout all working. I have the database set up with some possible modifications that will be done in the future. I decided to just build custom forms rather than use the wtforms. I just decided it would be easier to get the style and functionality I want. The next thing I'm going to be working on is saving recipes. I may need to create a hidden form that stores the data and I can just pass them to the server, but I still need to think about the best way to do it.
             </p>
             <br>
             <p>
