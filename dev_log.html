@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Danny Ellis">
-    <meta name="description" content="Site Plane for Chefs Cabinet. Will detail what is Chefs Cabinet as well as the process of developing the site.">
-    <meta property="og:title" content="Chefs Cabinet Site Plan">
+    <meta name="description" content="Dev Log for Chefs Cabinet.">
+    <meta property="og:title" content="Chefs Cabinet Dev Log">
     <title>Chefs Cabinet Site Dev Log</title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/normalize.css">
@@ -22,10 +22,45 @@
             <a href="index.html">Home</a>
             <a href="site-plan.html">Site Plan</a>
             <a href="dev_log.html">Dev Log</a>
-            <a href="#">Chefs Cabinet Site</a>
+            <a href="https://www.chefs-cabinet.com/" target="_blank" rel="noopener noreferrer">Chefs Cabinet Site</a>
         </nav> 
     </header>
     <main>
+        <section class="devPost">
+            <h1>April 18, 2024</h1>
+            <p>
+                Its been a few week since I last updated this Dev Log. Chefs Cabinet is now live and online. It took me a while to get it fully configured and running. But now it works great! It's only crashed once. The AWS machine CPU usage spiked to 100% for several minutes causing it to go offline. But besides that its been working pretty well.
+            </p>
+            <br>
+            <p>
+                Here a few things I've dealt with over the last couple weeks:
+            </p>
+            <ul>
+                <li>
+                    Learning linux. I've never used linux before and the AWS EC2 instance that they site is running off is a linux machine. It took a while to get comfortable navigating the computer system and learning the the commands that would allow me to edit files, remove files, move them around, git cli commands instead of the git commands built into VS code.
+                </li>
+                <li>
+                    Learning about Apache2 and wsgi was a struggle. It took a while of trial and error, and asking chat-gpt, to finally get the configuration files set up correctly. It was frustrating when I ran into an issue that seemed to have no answer. It always did but it took me hours or days to find. I definitely need to improve my google skills to better find solutions to issues I'm having.
+                </li>
+                <li>
+                    I've also been head down in adding features and fixing bugs now that people I know are using the site. There are only a handful of users, around 8, but I've already found bugs or features lacking thanks to them. The site is much better now than it was a few weeks ago because people are using the site! I've added search functionality. This allows users to search for specific users or recipes. I've added a profile page that shows all of the recipes a single user has added. This also serves as a hub for the user to be able to edit their profile. Each recipe can now be rated and reviewed. The average rating is showed next to the recipe title at the top of the recipe card.
+                </li>
+            </ul>
+            <p>
+                The development is going well. I have more features I want to add in the future and will continue to roll out updates to the website pretty regularly.
+            </p>
+            <br>
+            <p>Future Features:</p>
+            <ul>
+                <li>Followers/Following</li>
+                <li>Edit Recipe</li>
+                <li>User Uploaded Photos</li>
+                <li>Cook Books (User generated recipe collections)</li>
+                <li>Shopping List Generator (Create an editable shopping list, based off recipes you're going to good over the next few days/weeks.)</li>
+                <li>Update search to be more accurate. Right now it searches for exact matches to the search term.</li>
+            </ul>
+        </section>
+        <hr>
         <section class="devPost">
             <h1>April 1, 2024</h1>
             <p>
