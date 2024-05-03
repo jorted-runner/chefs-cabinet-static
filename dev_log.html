@@ -27,6 +27,83 @@
     </header>
     <main>
         <section class="devPost">
+            <h1>May 2, 2024</h1>
+            <p>A couple updates:</p>
+            <ul>
+                <li>
+                    <p>
+                        <strong>Cookbooks: </strong> I added the ability to add recipes to Cookbooks. The user can create public or private cookbooks that store recipes. Each recipe card has a button to add the recipe to a cook book. When pressed it displays a hidden div that has a dropdown that shows all of the cookbooks the user has created. They can either choose an existing cookbook or create a new one. If the user selects 'New Cookbook' it will change the drop down into a text input that allows them to enter the cookbook name and add a secondary drop down that allows the user to select 'Public' or 'Private'. I use JS to send the data to the server and depending on the response I display either an error message on the card or a success message. I don't think this is the best way to do it, but when the user closes the form div it triggers a page reload and scrolls back to the same y-cord on the page. I'm doing this so that to when they then go to add a new recipe to their cookbooks the list of cookbooks has the most up-to-date information.
+                    </p>
+                    <br>
+                    <p>
+                        An issue I'm still trying to figure out is on iPhone and iPad when the user clicks the 'add to cookbook' button the div populates, but it is hidden behind the recipe image for some reason. I have tried a bunch of things to get around this but so far its been a persistent issue. I have tried adjusting the z-index of the image and of the form div in css and even with the js code, but nothing I've tried has worked. The images are lazy loading which I thought could be causing the issue but I tested it out lazy loading and the issue still persisted. I tested the site on 3 different browsers on my iPhone and every single time I had the same bug. The issue doesn't happen on Mac or Windows, even if the window is sized down to mobile dimensions.
+                    </p>
+                    <br>
+                    <p>
+                        On the Profile page I added two buttons if the user has any cookbooks. If they have cookbooks a "Recipes" and a "Cookbooks" button show up. When the recipes button is pressed all the users recipes are showed. When the "Cookbooks" button is pressed all the recipes are hidden and the cookbooks are shown. The default is to show the recipes.
+                    </p>
+                </li>
+                <br>
+                <li>
+                    <p>
+                        <strong>Followers: </strong> I created a way for the user to follow certain users. If the user is not following anyone the homepage is populated with all of the recipes in the database, I may need to work on pagination or something as more recipes are created. After a user has people they are following their homepage is populated by recipes they have created and all recipes created by the users they're following. The search page then shows a random selection of recipes, kind of like an explore page. When the user clicks the follow button the data is sent to the server and the page reloads and scrolls to the same place. I feel like it works pretty well, because I want the data to reload so that the data being used reflects the new follow. The one issue I have with it is if the user follows someone off of the search page, it will reload the page and reload a new set of recipes to display, or if they found the recipe/user from a search the search is cleared. I want to find a way to update the information being used to render the page without having to reload the whole page, because sometimes the change after the reload feel abrupt.
+                    </p>
+                    <br>
+                    <p>
+                        I also added the follower/following count to the profile page. It is just a table with the number. I did add a feature where the user can click on the number and it will show a list of followers or following depending on which number pressed.
+                    </p>
+                </li>
+                <br>
+                <li>
+                    <p>
+                        <strong>Recipe Card Slides: </strong> I updated the slide show element so that if there is only one image a class of hidden is added to the buttons and the dots. That way the slide show navigation elements are only visible when they can actually do something.
+                    </p>
+                </li>
+                <br>
+                <li>
+                    <p>
+                        <strong>Recipe Generation: </strong> I updated the recipe generation process. The process before was add ingredients you want to use and ingredients to exclude. The the user could generate a recipe. When the recipe was generated the user could then regenerate the recipe with the same parameters or generate an image. After an image was generated then the user could save the recipe. I updated the process so that the user first adds the ingredients to include and ingredients to exclude. They can then generate a recipe like normal. The options from there are to 'edit the inputs and regenerate' or generate a recipe image. If the user chooses to edit the inputs and regenerate all of the recipe ingredients are listed in the ingredients to include and their original ingredients to exclude. This allows them to then remove or add new ingredients to include or exclude and generate a new recipe. The user can then generate an image, regenerate the image if they don't like it, and still edit the inputs of the generation to get a new recipe.
+                    </p>
+                    <br>
+                    <p>
+                        There was also a weird glitch where if the user regenerated the image the new image was displayed but when the user clicked save the first image was the one saved not the new one. I updated this so that when the image is regenerated the hidden form that is submitted to the server on save is deleted and rebuilt. Just to insure that the correct image data is being processed.
+                    </p>
+                    <br>
+                    <p>
+                        Another small fix was making it so that when a user clicks the save button the screen is disabled and a spinner is displayed until the recipe is saved and the user is redirected to the correct location. I found that without the spinner popping up the user would click save multiple times if the saving was happening slowly, causing the recipe to be added to the database more than once.
+                    </p>
+                </li>
+                <br>
+                <li>
+                    <p>
+                        <strong>Database: </strong> This is probably a lack of knowledge about server management, but when I've updated the database schema to have new tables or new table columns the server won't update the existing database file I have to create a new database file. And then run a separate script to migrate the existing data to the new database file. It's not a huge issue but does take time to update the migrate_db file with SQL statements that will correctly migrate the data to the correct location.
+                    </p>
+                </li>
+                <br>
+                <li>
+                    <p>
+                        <strong>Search: </strong> I updated the search on the server. It used to take the input as a single string and then it would search for that string in different columns of the Recipe, User, and Cookbook tables. I updated it so that the first thing it does is split the input value at any spaces. From there is will then loop through each of the values from the split and append the results for query based off of that term. This allows for a broader search that is a little bit more inclusive.
+                    </p>
+                    <br>
+                    <p>
+                        I want to add a feature where there is a drop down on the search page to filter the recipes by average rating. Right now its a hard process to implement because there are only a few recipes with any reviews but I may still add it.
+                    </p>
+                </li>
+            </ul>
+            <br>
+            <p>Upcoming Features</p>
+            <ul>
+                <li>Shopping List Generator (Create an editable shopping list, based off recipes you're going to good over the next few days/weeks.)</li>
+                <li>OAth - I want to use 3rd party login/registration.</li>
+                <li>During Recipe Generation show ingredient suggestions</li>
+                <li>
+                    Generate Recipes based off of just the name. Essentially the user would input: I want to make KFC style fried chicken. And the system would generate a recipe to make that recipe. Generate Recipes based off of category. Let the user put in a string such as: I want to make a healthy recipe that includes spinach but excludes tomatoes. These will just be tweaks on the current process of generating recipes, but it may be more involved than I'm realizing.
+                </li>
+
+            </ul>
+        </section>
+        <hr>
+        <section class="devPost">
             <h1>April 25, 2024</h1>
             <p>
                 Working on uploading profile pictures. I am only allowing the profile picture to be 200px by 200px so I've been working on a way for the user to select what area they want displayed. Right now the image is being cropped, but it doesn't exactly match the area selected by the user. So there is some error with the logic there.
