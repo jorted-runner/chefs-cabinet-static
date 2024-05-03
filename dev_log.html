@@ -27,6 +27,10 @@
     </header>
     <main>
         <section class="devPost">
+            <h1>May 3, 2024</h1>
+            <p>I added this check before the "Add to Cookbook" button: <i>{% if 'iPhone' in request.user_agent.string or 'iPad' in request.user_agent.string %}</i>. It just checks if the user is on an iPad or iPhone, and if they are, the button is hidden. I don't want to have this feature permanently blocked on iPhone but until I can figure out the weird image z-index issue. iPad and iPhone users can still add recipes to their cookbooks if they go to the recipe page.</p>
+        </section>
+        <section class="devPost">
             <h1>May 2, 2024</h1>
             <p>A couple updates:</p>
             <ul>
