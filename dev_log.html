@@ -28,8 +28,15 @@
     <main>
         <section class="devPost">
             <h1>May 3, 2024</h1>
-            <p>I added this check before the "Add to Cookbook" button: <i>{% if 'iPhone' in request.user_agent.string or 'iPad' in request.user_agent.string %}</i>. It just checks if the user is on an iPad or iPhone, and if they are, the button is hidden. I don't want to have this feature permanently blocked on iPhone but until I can figure out the weird image z-index issue. iPad and iPhone users can still add recipes to their cookbooks if they go to the recipe page.</p>
+            <p>
+                I added this check before the "Add to Cookbook" button: <i>{% if 'iPhone' in request.user_agent.string or 'iPad' in request.user_agent.string %}</i>. It just checks if the user is on an iPad or iPhone, and if they are, the button is hidden. I don't want to have this feature permanently blocked on iPhone but until I can figure out the weird image z-index issue. iPad and iPhone users can still add recipes to their cookbooks if they go to the recipe page.
+            </p>
+            <br>
+            <p>
+                I've been working on the edit cookbook page. I want the next feature to be the create shopping list but I feel like the user needs to be able to edit the cookbook first. The shopping list will be created based off of the cookbook, so they need to be able to remove recipes they don't actually want included. The JS to do this is almost done, I just need to send the data to the server and finish the server side data to save and update the cookbook info. The part that I think will be the 'hardest' is removing the recipe that are longer part of the cookbook.
+            </p>
         </section>
+        <hr>
         <section class="devPost">
             <h1>May 2, 2024</h1>
             <p>A couple updates:</p>
