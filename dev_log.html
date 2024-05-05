@@ -27,6 +27,21 @@
     </header>
     <main>
         <section class="devPost">
+            <h1>May 4, 2024</h1>
+            <p>
+                Didn't do too much but I did finish update cookbook. The user can now edit the privacy, name, or cover image and remove recipes. From there I'll be able to add the ability to generate the shopping list. I need to go update the edit profile to so that the image is not uploaded until the user saves the changes. I want to display it the same way I am with the update cookbook cover image. I should also look at how I'm allowing users to upload images to their recipes. I should just allow them to choose the file, have it display and  then they can click add image to have another file input box show up and then upload the images to S3 after the user has clicked save.
+            </p>
+            <br>
+            <p>
+                I don't want to forget this idea a friend gave me. He said it would be cool for the user to have the ability to actually print and purchase their own cookbooks. I'll have to look into finding a supplier to print and send the cookbooks, because that could be a cool way to offset the cost of running the AI model. He had some other feedback about the styling of the page and better optimizing it for desktop.
+            </p>
+            <br>
+            <p>
+                At some point I'm going to need to revisit all of my JS and create a utils module that I can have commonly used functions to cut down on repeated code.
+            </p>
+        </section>
+        <hr>
+        <section class="devPost">
             <h1>May 3, 2024</h1>
             <p>
                 I added this check before the "Add to Cookbook" button: <i>{% if 'iPhone' in request.user_agent.string or 'iPad' in request.user_agent.string %}</i>. It just checks if the user is on an iPad or iPhone, and if they are, the button is hidden. I don't want to have this feature permanently blocked on iPhone but until I can figure out the weird image z-index issue. iPad and iPhone users can still add recipes to their cookbooks if they go to the recipe page.

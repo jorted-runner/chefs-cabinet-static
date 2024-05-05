@@ -2,4 +2,9 @@
     nav {
         flex-direction: column;
     }
+    body {
+        width: 90%;
+        margin: auto;
+        background-color: #fbf8ea;
+    }
 }
