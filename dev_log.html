@@ -27,6 +27,21 @@
     </header>
     <main>
         <section class="devPost">
+            <h1>May 5, 2024</h1>
+            <p>
+                Today was another light day. I found a bug where when a user uploaded a new cover image for a cookbook it actually wasn't being saved, so the cover image never changed. It wasn't so much a bug as it was just me forgetting to add the image processing. So I fixed that and now the users chosen file actually gets saved to S3 and will be displayed.
+            </p>
+            <br>
+            <p>
+                I also created the ability to delete cookbooks. This one took me a while. I get trying to delete each recipe from the cookbook_recipes table associated with the cookbook and then the cookbook itself. I'm not sure I understand why that wasn't working but it didn't. I kept getting none type. But I changed the way I deleted it and I just deleted the cookbook straight out and that automatically deleted the associated recipes in the cookbook_recipes table.
+            </p>
+            <br>
+            <p>
+                From here I'll start working on the shopping list generating. I'm trying to decide how I want to store it, or if it want to store it at all since that would require another database migration. I could also just display the list and then generate a pdf or something that the user can download immediately.
+            </p>
+        </section>
+        <hr>
+        <section class="devPost">
             <h1>May 4, 2024</h1>
             <p>
                 Didn't do too much but I did finish update cookbook. The user can now edit the privacy, name, or cover image and remove recipes. From there I'll be able to add the ability to generate the shopping list. I need to go update the edit profile to so that the image is not uploaded until the user saves the changes. I want to display it the same way I am with the update cookbook cover image. I should also look at how I'm allowing users to upload images to their recipes. I should just allow them to choose the file, have it display and  then they can click add image to have another file input box show up and then upload the images to S3 after the user has clicked save.
