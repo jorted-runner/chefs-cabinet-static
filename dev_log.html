@@ -27,6 +27,13 @@
     </header>
     <main>
         <section class="devPost">
+            <h1>May 7, 2024</h1>
+            <p>
+                Today I worked on the generate shopping list. Generating the shopping list wasn't to bad, but for some reason serving it to the html file is proving more difficult. I found one way that I really don't like but it works. Right now the shopping list is being passed to the server as a string for some reason rather than a json or even a list. So when the page loads I pull the string into JS, parse it as JSON and then build the list from there. I don't like it though because I feel like it adds extra steps/complexity to something that should be simple. I'll probably need to revisit how I handle the data in the server. Probably need to look at the recipe generation and see how I do it there.
+            </p>
+        </section>
+        <hr>
+        <section class="devPost">
             <h1>May 6, 2024</h1>
             <p>
                 So I was revisiting how user uploaded images are being processed. I fixed the profile picture and the cookbook upload image to be processed after the user clicks save. Before every time they chose a file in the file input it was uploading it to S3, which is just a waste of resources. I still need to update the recipe images process because its still uploading each image to S3 even before the user saves their changes. It'll take little longer to implement so I'll add that to the do to list and tackle it later, because its working, just not as efficiently as I would like. 
