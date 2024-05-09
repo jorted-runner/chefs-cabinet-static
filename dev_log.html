@@ -27,6 +27,25 @@
     </header>
     <main>
         <section class="devPost">
+            <h1>May 8, 2024</h1>
+            <p>
+                I finished the shopping list generation. I really didn't like how it was handled before so I rebuilt the process of displaying it. I had to update the prompt being sent to the OPENAI API so that it always sent me back a JSON with specific key values. From there it allowed me to better build the template html to be structured how I wanted it. Rebekah makes her shopping list by category i.e. Dairy, Protein, Produce, etc. so that is how I had the shopping list structured. I built the page displaying it to allow the user to add new categories if they would like. They can also edit any item on the shopping list or add new items a category.
+            </p>
+            <br>
+            <p>
+                I've struggled with the prompt for a while but I'm not sure how to make it much better. I really want the list to be built how a normal person would shop. For example if a recipe calls for a cup of diced onions and a cup of chopped onions for another recipe I know I need one maybe two onions. I've put some instruction into the prompt to try and force it to do this for the user but it struggles with it sometimes, especially with spices. If one recipe calls for a teaspoon of something and another a tablespoon it struggles to just tell me I need salt.
+                <br>
+                <br>
+                <i>prompt = f"I'm planning to cook several recipes and need to create a shopping list based on their ingredients. Please provide the items needed along with their quantities, categorized into Protein, Produce, Dairy, and Pantry. In the JSON, ensure to use the keys 'item' and 'quantity'. 'item' should only include the item name without its state (e.g., chopped, diced, minced, cooked, etc). 'quantity' should indicate the quantity with the unit (e.g., lbs, cans, bundles, etc). Round the quantities up to the nearest whole number. Combine similar ingredients and sum their quantities accordingly. Here are the ingredients: {ingredients}"
+                </i>
+            </p>
+            <br>
+            <p>
+                I'm also struggling to decide how to handle the shopping list. I can't decide if I need to save the shopping list to the users profile so they can access it at any time or if I should just allow them to see it the once and print off a PDF file I create of the list. I also just had another idea. I save the shopping list to the users profile but just overwrite it every time they create a new one. So when they hit save it is saved to their profile and the can access it again, but when they go to generate a new one it just replaces the existing list. I just don't want them to have to sort through tons of lists that aren't that helpful anymore. I think I'm going to move forward with that idea I just had. I think its a good compromise of not storing a ton of lists but still allowing the user to comeback to their list to view and edit it.
+            </p>
+        </section>
+        <hr>
+        <section class="devPost">
             <h1>May 7, 2024</h1>
             <p>
                 Today I worked on the generate shopping list. Generating the shopping list wasn't to bad, but for some reason serving it to the html file is proving more difficult. I found one way that I really don't like but it works. Right now the shopping list is being passed to the server as a string for some reason rather than a json or even a list. So when the page loads I pull the string into JS, parse it as JSON and then build the list from there. I don't like it though because I feel like it adds extra steps/complexity to something that should be simple. I'll probably need to revisit how I handle the data in the server. Probably need to look at the recipe generation and see how I do it there.
