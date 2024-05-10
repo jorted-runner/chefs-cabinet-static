@@ -27,7 +27,18 @@
     </header>
     <main>
         <section class="devPost">
-            <h1>May 8, 2024</h1>
+            <h1>May 10, 2024</h1>
+            <p>
+                Updated the save shopping list so that when a user saves their generated shopping list they are redirected to the view shopping list page. I also added a 'edit' button so that users can edit their existing list. I added a shopping list button to each persons profile page. This will allow them to view their shopping list. I currently only allow the owner of the list to view the list. I can see an argument for being able to share your shopping list, but for now I'm going to leave it this way. I'm also going to add an option to print off a PDF version of their list. Since each user is unique, I'm going to just allow each user to have a single file associated with their account and when they create a new shopping list or edit and update their list a PDF is generated and replaces the other one.
+            </p>
+            <br>
+            <p>
+                I've also began working on adding google authentication to the website. It doesn't seem to hard, but part of it is creating a custom Google OAth connection screen. Something they want you to include is a link to your sites Terms of Usage and Privacy Policy. I tried asking ChatGPT to help me write a ToU and Privacy Policy but ChatGPT isn't allowed too do that. I'm going to read through Instagram and Pinterest and try and model one for my site off of theirs.
+            </p>
+        </section>
+        <hr>
+        <section class="devPost">
+            <h1>May 9, 2024</h1>
             <p>
                 Today I didn't do too much. I added the save recipe functionality I wanted. Each user can now create and save a shopping list. Anytime they generate a shopping list and hit save, it just overwrites the old list. I didn't quite finish because the redirect to view the shopping list after saving doesn't work. I need to figure out how to fix that. I think it might be because I'm using fetch so the JS keeps waiting for something else to happen. It sends the post request and the list is saved, but the server redirect doesn't happen for some reason.
             </p>
