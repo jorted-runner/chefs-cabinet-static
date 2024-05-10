@@ -29,6 +29,13 @@
         <section class="devPost">
             <h1>May 8, 2024</h1>
             <p>
+                Today I didn't do too much. I added the save recipe functionality I wanted. Each user can now create and save a shopping list. Anytime they generate a shopping list and hit save, it just overwrites the old list. I didn't quite finish because the redirect to view the shopping list after saving doesn't work. I need to figure out how to fix that. I think it might be because I'm using fetch so the JS keeps waiting for something else to happen. It sends the post request and the list is saved, but the server redirect doesn't happen for some reason.
+            </p>
+        </section>
+        <hr>
+        <section class="devPost">
+            <h1>May 8, 2024</h1>
+            <p>
                 I finished the shopping list generation. I really didn't like how it was handled before so I rebuilt the process of displaying it. I had to update the prompt being sent to the OPENAI API so that it always sent me back a JSON with specific key values. From there it allowed me to better build the template html to be structured how I wanted it. Rebekah makes her shopping list by category i.e. Dairy, Protein, Produce, etc. so that is how I had the shopping list structured. I built the page displaying it to allow the user to add new categories if they would like. They can also edit any item on the shopping list or add new items a category.
             </p>
             <br>
