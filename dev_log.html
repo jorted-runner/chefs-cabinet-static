@@ -27,6 +27,17 @@
     </header>
     <main>
         <section class="devPost">
+            <h1>May 13, 2024</h1>
+            <p>
+                I had a pretty busy weekend with mothers day and homework from my classes. But I finished adding Google Authentication to registration and login. It really wasn't too bad. I expected it to be harder than it was, but it was pretty straight forward. Rather than triggering an error if a user tried to login with google before they had registered, I simple had it register them and log them in. I figured that would be a little easier for the user in the end. I still want to add facebook validation but haven't started doing that yet.
+            </p>
+            <br>
+            <p>
+                I did cause the site to break for a while when I pushed the google authentication to the server. I had included a dependency that was deprecated and when the wsgi tried to import the app and the dependencies it was causing it to break. It took me a while to figure out what was causing the server to crash because the error traceback was long.But after a while I realized that the dependency wasn't being used. After I removed it from the code and to be safe removed it from the server, everything started working again.
+            </p>
+        </section>
+        <hr>
+        <section class="devPost">
             <h1>May 10, 2024</h1>
             <p>
                 Updated the save shopping list so that when a user saves their generated shopping list they are redirected to the view shopping list page. I also added a 'edit' button so that users can edit their existing list. I added a shopping list button to each persons profile page. This will allow them to view their shopping list. I currently only allow the owner of the list to view the list. I can see an argument for being able to share your shopping list, but for now I'm going to leave it this way. I'm also going to add an option to print off a PDF version of their list. Since each user is unique, I'm going to just allow each user to have a single file associated with their account and when they create a new shopping list or edit and update their list a PDF is generated and replaces the other one.
