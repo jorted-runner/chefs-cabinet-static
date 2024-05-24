@@ -112,3 +112,20 @@ hr {
     margin: auto;
     padding: 1rem;
 }
+
+.devPost {
+    display: none;
+}
+.pagination-button {
+padding: 5px 10px;
+margin: 0 5px;
+cursor: pointer;
+}
+.pagination-button.active {
+font-weight: bold;
+text-decoration: underline;
+}
+.pagination-container {
+text-align: center;
+margin: 20px 0;
+}

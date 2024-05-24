@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Montserrat&family=Poppins:ital,wght@1,500&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script defer src="/scripts/main.js"></script>
 </head>
 <body>
     <header>
@@ -25,21 +26,33 @@
             <a href="https://www.chefs-cabinet.com/" target="_blank" rel="noopener noreferrer">Chefs Cabinet Site</a>
         </nav> 
     </header>
+    
     <main>
+        <div class="pagination-container" id="top-pagination">
+            <!-- Top navigation controls will be added here dynamically -->
+        </div>
+        <div>
+            <label for="sortDropdown">Sort by date: </label>
+            <select id="sortDropdown">
+                <option value="newest">Newest First</option>
+                <option value="oldest">Oldest First</option>
+            </select>
+        </div>
+    <div id="devLogContainer">
         <section class="devPost">
             <h1>May 23, 2024</h1>
             <p>
                 Today I spent some time refactoring my code. I had a lot of nested if statements and I cleaned some of those up. I also started moving items off the server file and into modules. So far I've shrunk the server file but a little over 100 lines of code and clean up a lot of functions. I also added error pages. Now the user won't get a scary sever error page they will be redirected to a custom error page. I've been meaning to implement this for a while now, and it really wasn't that hard.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>May 22, 2024</h1>
             <p>
                 Over the last week or so I haven't done much on the website. I've added input sanitation to clean all user input data. I've fixed a few minor things. I updated the homepage before login, to have screen recordings of how the site works. I've received some feedback from other developers about the site and the code. I'm going to begin refactoring the code, which will be the biggest/longest term project now. I will also be working on the styling of the front end little by little. I'll probably focus on one aspect and work on getting that to work.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>May 15, 2024</h1>
             <p>
@@ -50,7 +63,7 @@
                 The site is very close to a finished product. I'm not great at CSS so the styling is pretty sloppy in places, but the functionality is pretty much there. I still have a few things I'm working on and want to finish. But its almost time to start the next project. So I'll be brainstorming soon what problems I need to fix.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>May 14, 2024</h1>
             <p>
@@ -61,7 +74,7 @@
                 On a side not, OpenAI release a new version of ChatGPT on monday. And I feel like the quality of answers I get has dipped significantly. I used to be able to give it sections of my code and ask it for help debugging or fixing a feature I'm stuck on. But now when I do that same process it breaks my code even more. Maybe I just need to retrain myself on how to work with ChatGPT but it liked it better before this most recent update.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>May 13, 2024</h1>
             <p>
@@ -72,7 +85,7 @@
                 I did cause the site to break for a while when I pushed the google authentication to the server. I had included a dependency that was deprecated and when the wsgi tried to import the app and the dependencies it was causing it to break. It took me a while to figure out what was causing the server to crash because the error traceback was long.But after a while I realized that the dependency wasn't being used. After I removed it from the code and to be safe removed it from the server, everything started working again.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>May 10, 2024</h1>
             <p>
@@ -83,14 +96,14 @@
                 I've also began working on adding google authentication to the website. It doesn't seem to hard, but part of it is creating a custom Google OAth connection screen. Something they want you to include is a link to your sites Terms of Usage and Privacy Policy. I tried asking ChatGPT to help me write a ToU and Privacy Policy but ChatGPT isn't allowed too do that. I'm going to read through Instagram and Pinterest and try and model one for my site off of theirs.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>May 9, 2024</h1>
             <p>
                 Today I didn't do too much. I added the save recipe functionality I wanted. Each user can now create and save a shopping list. Anytime they generate a shopping list and hit save, it just overwrites the old list. I didn't quite finish because the redirect to view the shopping list after saving doesn't work. I need to figure out how to fix that. I think it might be because I'm using fetch so the JS keeps waiting for something else to happen. It sends the post request and the list is saved, but the server redirect doesn't happen for some reason.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>May 8, 2024</h1>
             <p>
@@ -109,14 +122,14 @@
                 I'm also struggling to decide how to handle the shopping list. I can't decide if I need to save the shopping list to the users profile so they can access it at any time or if I should just allow them to see it the once and print off a PDF file I create of the list. I also just had another idea. I save the shopping list to the users profile but just overwrite it every time they create a new one. So when they hit save it is saved to their profile and the can access it again, but when they go to generate a new one it just replaces the existing list. I just don't want them to have to sort through tons of lists that aren't that helpful anymore. I think I'm going to move forward with that idea I just had. I think its a good compromise of not storing a ton of lists but still allowing the user to comeback to their list to view and edit it.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>May 7, 2024</h1>
             <p>
                 Today I worked on the generate shopping list. Generating the shopping list wasn't to bad, but for some reason serving it to the html file is proving more difficult. I found one way that I really don't like but it works. Right now the shopping list is being passed to the server as a string for some reason rather than a json or even a list. So when the page loads I pull the string into JS, parse it as JSON and then build the list from there. I don't like it though because I feel like it adds extra steps/complexity to something that should be simple. I'll probably need to revisit how I handle the data in the server. Probably need to look at the recipe generation and see how I do it there.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>May 6, 2024</h1>
             <p>
@@ -127,7 +140,7 @@
                 I was right. It did take a while longer to refactor the way user uploaded recipe images were processed. But it allowed me to implement the 'delete' button. Users can now add up to 10 images and can remove any images they want. I did add a check so that if they only have one image the delete button is not accessible.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>May 5, 2024</h1>
             <p>
@@ -142,7 +155,7 @@
                 From here I'll start working on the shopping list generating. I'm trying to decide how I want to store it, or if it want to store it at all since that would require another database migration. I could also just display the list and then generate a pdf or something that the user can download immediately.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>May 4, 2024</h1>
             <p>
@@ -157,7 +170,7 @@
                 At some point I'm going to need to revisit all of my JS and create a utils module that I can have commonly used functions to cut down on repeated code.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>May 3, 2024</h1>
             <p>
@@ -168,7 +181,7 @@
                 I've been working on the edit cookbook page. I want the next feature to be the create shopping list but I feel like the user needs to be able to edit the cookbook first. The shopping list will be created based off of the cookbook, so they need to be able to remove recipes they don't actually want included. The JS to do this is almost done, I just need to send the data to the server and finish the server side data to save and update the cookbook info. The part that I think will be the 'hardest' is removing the recipe that are longer part of the cookbook.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>May 2, 2024</h1>
             <p>A couple updates:</p>
@@ -245,7 +258,7 @@
 
             </ul>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>April 25, 2024</h1>
             <p>
@@ -256,7 +269,7 @@
                 I also had to install a bunch of dependencies for a class I'm taking and it messed up my installation of python and it took me like an hour to get python working again on my computer. I'm still not sure what happened, but I just uninstalled python and then reinstalled the latest version.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>April 24, 2024</h1>
             <p>
@@ -275,7 +288,7 @@
                 I start my new semester this week so development will slow down, but next up is looking into better user authentication. I want to allow users to sign in with google/facebook/apple id.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>April 18, 2024</h1>
             <p>
@@ -310,14 +323,14 @@
                 <li>Update search to be more accurate. Right now it searches for exact matches to the search term.</li>
             </ul>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>April 1, 2024</h1>
             <p>
                 Today I reworked the image handling. The image is downloaded and converted to webp. During the conversion I also change the image width and height to make the file size a lot smaller. I may still lower the image quality as well to try and cut down on load size. But we'll see. I may also need to start thinking about how to tell the website to load only so much data at a time. Like load in batches. I do have the images set to lazy load but I want to be sure I'm not slowing down the site performance.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>March 30, 2024</h1>
             <p>
@@ -332,14 +345,14 @@
                 On the topic of functionality I have noticed when saving a created website it takes a while for the image to load when it's first added to AWS. It makes me question if that really is the best place to store them. When the user hits save they are redirected to the main feed and they can see and interact with the recipe card they just created but the image doesn't show up for several seconds while its being processed by AWS. After that initial pause the load time is way faster. But makes me kind of consider saving them 'locally' or just adding a little bit of a 'processing period' before their card shows up. But I'm not really sure how I would implement the processing period.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>March 28, 2024</h1>
             <p>
                 Today I worked on some styling and making a list of what is left to do. I also changed the images to save in the S3 bucket. Still not sure if I prefer that but it feels right, so I'm going to stick with it.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>March 27, 2024</h1>
             <p>
@@ -350,7 +363,7 @@
                 I also decided to just save the images to local for now. I need to research more about storing the images in an S3 bucket. I want to be sure that the security and permissions associated with the bucket don't cause issues but also don't give the user more access than they're supposed to have. I may end up just storing them locally in the EC2 after we migrate, but I need to figure out the cost of the data expanding that way. With the images I also need to create a few classes that will allow the image to be optimized for the web. I need it to be way smaller and the quality dropped a bit to keep the page load size down.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>March 25, 2024</h1>
             <p>
@@ -365,14 +378,14 @@
                 I've got the error messages fixed. Now I'm just stuck trying to figure out the best way to save recipes. Its going to require I look at and refactor the JavaScript I use to create the new_recipe page forms. I think I need to look for points where I can save data at a global level that will be easily passed to the server. Right now I'm thinking I just need to create a form that is hidden except for the save button. Pressing the save button will pass all the hidden recipe data to the server. I just need to think of the best way to populate the form without having to code to completely unique forms with JavaScript for the AI generated recipe and the user input recipe.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>March 20, 2024</h1>
             <p>
                 So far today I have got the login and register pages built. I am using bootstrap and wtforms, but I may change to just a plain old html form so that I can style it custom. At the moment I'm using a forms.py file to build out the forms, so there may be a way to assign each item a class or id from there. If there isn't I'll just build the html form myself.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>March 19, 2024</h1>
             <p>
@@ -388,21 +401,21 @@
                 Sometimes I start to wonder if I'm afraid to finish this project with how long its taken. From first conception of the idea to now its been about a year. Granted its been a crazy year, but i keep allowing myself to plateau or get distracted by other things. I really just want to get this project finished. The udemy course also gives some vague instructions on how to run more than one website off of one AWS EC2 instance. So after Chefs Cabinet is up and running I will get my 'About Me' site and 'Flight Club' web app running off the EC2 so that I can manage all of them from one place.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>March 15, 2024</h1>
             <p>
                 So I have bought a domain name. Cooks Corner was not available, so we have pivoted into Chefs Cabinet. Moving forward the project will be Chefs Cabinet. I'm excited to have finally found a tutorial about how to get the site off local and onto the web.
             </p>                   
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>March 4, 2024</h1>
             <p>
                 Just a quick update. I haven't done anything on Chefs Cabinet in over a week. I'm still working on the Database course and I want to learn more about setting up an efficient and well designed DB before I get to far along in this project. I started the Udemy Course about deploying a Flask app to AWS. I have just been watching videos and practice examples but I should know enough soon to deploy Chefs Cabinet to the web. After that I'll be able to start getting feedback on how the site is working.
             </p>                   
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>February 27, 2024</h1>
             <p>
@@ -415,7 +428,7 @@
                 I also found a Udemy course about deploying Flask apps to AWS. I think both will be helpful. I think part of what has made this process so hard, is that on AWS there are tons of different options for deployment.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>February 26, 2024</h1>
             <p>
@@ -449,7 +462,7 @@
                 I'm still having a hard time finding more information about hosting a Flask Web App on AWS. I'm not sure why its so difficult to find good/helpful information about this... but it has been. I'm almost tempted to just host it on Heroku again despite the costs, just because I know how to do that. And it wasn't that hard. But I like the idea of AWS because the cost of hosting is much lower. And that is where the images are being stored already.
             </p>                  
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>February 23, 2024</h1>
             <p>
@@ -459,14 +472,14 @@
                 I started working on deploying a temporary version of Chefs Cabinet. The example deployment was super easy, but now that I have multiple Python files, HTML, JavaScript, and CSS files its proving to be more difficult. It's going to take some research and probably some hours on youtube to figure it out.
             </p>                    
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>February 22, 2024</h1>
             <p>
                 Didn't do much today. I'm pretty exhausted. But I did begin learning about deploying a flask app to AWS. I'm going to deploy a simple example project and then work on deploying this one. Deploying Chefs Cabinet will be harder because I'm also wanting to connect it to GitHub so that updates when I push code to the repo. I got the process started but will try and finish it tomorrow.
             </p>                      
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>February 21, 2024</h1>
             <p>
@@ -485,7 +498,7 @@
                 As I'm writing this out I came up with probably 10 more things I could be working on. But they all came back to having a database set up. And having recipes stored there. I decided that I'm going to work on getting the site up on AWS so I can start to get feedback on how the recipe generation is working. And what people would like to see changed. I'll then begin work on the database. Or... I guess I could always work on styling....
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>February 20, 2024</h1>
             <p>
@@ -500,7 +513,7 @@
                 Okay I didn't actually get off... I went in and figured out what the issue was. The issue actually originated from AI_tool class. I hadn't refactored the message being sent to the API. It was trying to format it like a dictionary like the API used to want. So now I have the recipe generation working. Tomorrow I'll work on populating the data into the website and generating an image for the user to see.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>February 19, 2024</h1>
             <p>
@@ -510,7 +523,7 @@
                 <a href="https://community.aws/tutorials/automating-your-container-deployments-with-cicd-and-github-actions?ref=dc&id=dc-handson">Github and AWS</a>
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>February 18, 2024</h1>
             <p>
@@ -519,14 +532,14 @@
                 The next issue with the image generation is that OpenAI only allows for 5 requests a minute. Which while I'm just testing and using the site myself that should be plenty, but if we every get to a mass of users that may be an issue. I may need to look into other options for generating the images. I used to have it so that when the user requested images for their site it showed two options and they chose from the two, but with the updates to the API and Dall-E-3 it only allows for 1 image to be generated at a time. So I will probably just have to work with that. Show the user the one image, then allow them to request regeneration if they want to see a new image.
             </p>                      
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>February 17, 2024</h1>
             <p>
                 I touched up the new blank recipe form. Right now it's storing the data in lists, may change eventually. I also began working on image generation. I need to read the OpenAI api documentation again, I think they changed how to access the API since last time I used it. I think it will be a pretty easy to fix, but it'll have wait until tomorrow.
             </p>                      
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>February 16, 2024</h1>
             <p>
@@ -542,7 +555,7 @@
                 I spent some more time on the form and now it allows for the user to add via "Enter" or the button. I also figured out how to remove the specific item from the internal list. So now I'll be able to pass the correct ingredients to the AI recipe Generator. Next I'm going to finish the blank recipe form and work on 'storing' the data. From there I'm planning to add the ability to generate images, I want to just have a singular function that handles that so I need to work on how the form is storing the data. The original version of this project I got ahead of myself and kept running into issues where the data wasn't stored cleanly or uniformly so it was really hard to reuse code.
             </p>           
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>February 15, 2024</h1>
             <p>
@@ -553,7 +566,7 @@
                 I'm going to have to figure out why its not working, and its probably something simple but I don't have it in me today to figure it out.
             </p>           
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>February 13, 2024</h1>
             <p>
@@ -575,7 +588,7 @@
                 This could look really dumb, but I want to change the bullet points for "&lt;ul&gt;" to be 🍽️ or some other food-related emoji.
             </p>            
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>February 11, 2024</h1>
             <p>
@@ -586,7 +599,7 @@
                 As I'm beginning to rebuild the project, I have the old source code open. But as I'm looking through it I'm afraid to copy too much of it because I really don't want to end up with the same spaghetti code that I had before. The reason I wanted to start this project from was to be able to better structure the code as well as create a more cohesive design.
             </p>
         </section>
-        <hr>
+        
         <section class="devPost">
             <h1>February 9, 2024</h1>
             <p>
@@ -595,8 +608,8 @@
                 To see the full recipe the user needs to click anywhere on the image, description or header areas. After clicking this area the card will flip over and expand. The image will shrink and move to the left, the description will move up and next to the image. The rest of the card will show the ingredients and the instructions. The expanded card will be scrollable depending on how much of an overflow the content has. In mobile the card won't get wider it will just take up the full screen and become scrollable.
             </p>
         </section>
-        <hr>
-        <section class="devPost"></section>
+        
+        <section class="devPost">
             <h1>February 6, 2024</h1>
             <h4>Overview</h4>
             <p>
@@ -617,9 +630,11 @@
                 I talked to Amber and we agreed that the background color needed to be lighter. So I lightened it up and I'm a lot happier with the look of the site. I finished adding the site styling and now just need to finalize the wireframe.
             </p>
         </section>
-        <hr>
+    </div>
+    <div class="pagination-container" id="bottom-pagination">
+    </div>
     </main>
-
+    
     <footer>
         <p><br>Danny Ellis<br>United States</p>
         <p id="lastModified">Last Modification: </p>
