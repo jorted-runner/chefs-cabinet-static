@@ -40,6 +40,13 @@
         </div>
     <div id="devLogContainer">
         <section class="devPost">
+            <h1>May 27, 2024</h1>
+            <p>
+                So I decided to add Walmart Pick-Up Order/Delivery integration. As I was reading through the walmart o/i documentation it doesn't seem like it will be all that hard. Right now I'm trying to decide how I want to do it. They have the option to register your recipe with their database and then that will allow you to get all the ingredients for that recipe and add them to the cart. Or I can skip that step so I don't have to add the recipe to the their database and then store the corresponding key. But that would require that I then search for each ingredient and amount needed and then add it to the cart.... as I type this out I think it'll definitely be easier to just register the recipe with the walmart database. It'll cause a lot less of a head ache since they will handle a lot of the searching process.
+            </p>
+        </section>
+
+        <section class="devPost">
             <h1>May 23, 2024</h1>
             <p>
                 Today I spent some time refactoring my code. I had a lot of nested if statements and I cleaned some of those up. I also started moving items off the server file and into modules. So far I've shrunk the server file but a little over 100 lines of code and clean up a lot of functions. I also added error pages. Now the user won't get a scary sever error page they will be redirected to a custom error page. I've been meaning to implement this for a while now, and it really wasn't that hard.
